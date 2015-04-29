@@ -1,0 +1,16 @@
+#activity{
+	border: 1px solid #cccccc;
+	width: 698px;
+	height: 400px;
+	overflow: auto;
+	margin-bottom:  20px;
+	display: inline-block;
+}
+#activity p{
+	padding: 0px;
+	margin: 0px;
+	margin-left: 5px;
+}
+#message input{
+	width: 600px;
+}
