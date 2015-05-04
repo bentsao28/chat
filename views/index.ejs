@@ -16,13 +16,13 @@
         socket.on('login', function(data){
             $("#activity").append('<p><b>' + data.name + '</b> is now online!</p>');
         })
-        socket.on('history', function(data){
-            for(var i=0;i<data.length;i++){
-                console.log(data[i]);
-                $("#activity").append('<p><b>' + data[i].name + ':</b> ' + data[i].message + '</p>');
-                $("#activity").animate({scrollTop: $("#activity")[0].scrollHeight}, 1000);
-            }
-        })
+        // socket.on('history', function(data){
+        //     for(var i=0;i<data.length;i++){
+        //         console.log(data[i]);
+        //         $("#activity").append('<p><b>' + data[i].name + ':</b> ' + data[i].message + '</p>');
+        //         $("#activity").animate({scrollTop: $("#activity")[0].scrollHeight}, 1000);
+        //     }
+        // })
         $('button').click(function(){
             socket.emit('message', {message: $("#chat").val(), name: name});
             $("#chat").val("");

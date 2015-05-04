@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
 var app = express();
-var history = [];
+// var history = [];
 var server = app.listen(8001, function(){
 	console.log('listening on port 8001');
 })
@@ -13,14 +13,14 @@ io.sockets.on('connection', function(socket){
 		console.log(data.name + " has signed in");
 		color = Math.floor((Math.random() * 10) + 1);
 		user = data.name;
-		socket.emit('history', history);
+		// socket.emit('history', history);
 		io.emit('login', {name: data.name});
 	})
 	socket.on('message', function(data){
 		console.log(data.message);
 		io.emit('broadcast', {message: data.message, name: data.name});
-		history.push(data);
-		console.log(history);
+		// history.push(data);
+		// console.log(history);
 	})
 	socket.on('disconnect', function(){
 		console.log("signed off" + user);
